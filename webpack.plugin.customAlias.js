@@ -6,6 +6,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var defaultAliasesMap = require('./webpack.oldlibs.aliasesMap');
+
 /**
  * This plugin is used to create backward compatibility aliases for un-updated old elements or any other packages
  * That contains references to old libraries like, babel-runtime (not the @babel/runtime) and etc
@@ -13,10 +15,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var VcWebpackCustomAliasPlugin =
 /*#__PURE__*/
 function () {
-  function VcWebpackCustomAliasPlugin(aliasesMap, isDev) {
+  function VcWebpackCustomAliasPlugin(aliasesMap, isDev = false) {
     _classCallCheck(this, VcWebpackCustomAliasPlugin);
 
-    this.aliasesMap = aliasesMap;
+    this.aliasesMap = aliasesMap ? aliasesMap : defaultAliasesMap;
     this.isDev = isDev;
   }
 
