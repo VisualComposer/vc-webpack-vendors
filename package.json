@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4"
+  },
+  "name": "vc-webpack-vendors",
+  "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VisualComposer/vc-webpack-vendors.git"
+  },
+  "keywords": [
+    "webpack",
+    "vendor"
+  ],
+  "author": "Pavel I",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/VisualComposer/vc-webpack-vendors/issues"
+  },
+  "homepage": "https://github.com/VisualComposer/vc-webpack-vendors#readme"
+}
