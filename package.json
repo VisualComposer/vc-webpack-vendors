@@ -4,6 +4,17 @@
   "version": "1.1.0",
   "main": "index.js",
   "devDependencies": {
+  },
+  "dependencies": {
+    "base-64": "0.1.0",
+    "lodash": "4.17.11",
+    "prop-types": "15.7.2",
+    "raw-loader": "1.0.0",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "vc-cake": "0.8.0",
+    "pako": "1.0.10",
+    "react-tinymce": "0.7.0",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
     "@babel/plugin-proposal-class-properties": "7.3.4",
@@ -29,17 +40,6 @@
     "virtual-module-webpack-plugin": "0.4.1",
     "webpack": "4.29.6",
     "webpack-cli": "3.2.3"
-  },
-  "dependencies": {
-    "base-64": "0.1.0",
-    "lodash": "4.17.11",
-    "prop-types": "15.7.2",
-    "raw-loader": "1.0.0",
-    "react": "16.8.4",
-    "react-dom": "16.8.4",
-    "vc-cake": "0.8.0",
-    "pako": "1.0.10",
-    "react-tinymce": "0.7.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
