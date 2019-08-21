@@ -1,7 +1,7 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "devDependencies": {
   },
@@ -38,8 +38,8 @@
     "url-loader": "2.1.0",
     "vc-webpack-vendors": "1.1.0",
     "virtual-module-webpack-plugin": "0.4.1",
-    "webpack": "4.39.2",
-    "webpack-cli": "3.3.7"
+    "webpack": "4.29.6",
+    "webpack-cli": "3.2.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
