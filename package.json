@@ -1,7 +1,7 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "index.js",
   "devDependencies": {
   },
@@ -23,7 +23,7 @@
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.5.5",
     "@babel/runtime": "7.5.5",
-    "babel-eslint": "10.0.2",
+    "babel-eslint": "10.0.3",
     "babel-loader": "8.0.6",
     "classnames": "2.2.6",
     "css-loader": "2.1.1",
@@ -36,7 +36,6 @@
     "style-loader": "1.0.0",
     "terser-webpack-plugin": "1.4.1",
     "url-loader": "2.1.0",
-    "vc-webpack-vendors": "1.1.0",
     "virtual-module-webpack-plugin": "0.4.1",
     "webpack": "4.29.6",
     "webpack-cli": "3.2.3"
