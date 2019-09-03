@@ -14,8 +14,10 @@ module.exports = function webpackVendors() {
     return _toConsumableArray(new Set([
         'react',
         'react-dom',
+        'react-dom/server.browser.js',
         'create-react-class',
         'classnames',
+        'striptags',
         'lodash',
         'vc-cake',
         'pako',
