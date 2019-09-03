@@ -14,7 +14,7 @@ module.exports = function webpackVendors() {
     return _toConsumableArray(new Set([
         'react',
         'react-dom',
-        'react-dom/server.browser.js',
+        'react-dom/server',
         'create-react-class',
         'classnames',
         'striptags',
