@@ -6,6 +6,7 @@
   "devDependencies": {
   },
   "dependencies": {
+    "autoprefixer": "9.6.1",
     "base-64": "0.1.0",
     "lodash": "4.17.15",
     "prop-types": "15.7.2",
@@ -27,7 +28,7 @@
     "babel-loader": "8.0.6",
     "classnames": "2.2.6",
     "striptags": "3.1.1",
-    "less": "3.9.0",
+    "less": "3.10.3",
     "postcss": "7.0.17",
     "postcss-advanced-variables": "3.0.0",
     "postcss-clean": "1.1.0",
@@ -61,8 +62,12 @@
     "css-loader": "3.2.0",
     "color-name": "1.1.4",
     "eslint": "5.15.1",
-    "less": "3.9.0"
+    "less": "3.10.3"
   },
+  "browserslist": [
+    "ie >= 11",
+    "last 2 version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VisualComposer/vc-webpack-vendors.git"
