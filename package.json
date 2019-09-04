@@ -27,6 +27,17 @@
     "babel-loader": "8.0.6",
     "classnames": "2.2.6",
     "striptags": "3.1.1",
+    "postcss": "7.0.17",
+    "postcss-advanced-variables": "3.0.0",
+    "postcss-clean": "1.1.0",
+    "postcss-color-function": "4.1.0",
+    "postcss-conditionals": "2.1.0",
+    "postcss-custom-media": "7.0.8",
+    "postcss-custom-properties": "9.0.2",
+    "postcss-each": "0.10.0",
+    "postcss-math": "0.0.10",
+    "postcss-nested": "4.1.2",
+    "postcss-loader": "3.0.0",
     "css-loader": "2.1.1",
     "exports-loader": "0.7.0",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
@@ -43,6 +54,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "resolutions": {
+    "postcss": "7.0.17",
+    "css-loader": "3.2.0",
+    "color-name": "1.1.4",
+    "eslint": "5.15.1"
   },
   "repository": {
     "type": "git",
