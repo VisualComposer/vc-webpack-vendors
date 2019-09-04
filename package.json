@@ -27,6 +27,7 @@
     "babel-loader": "8.0.6",
     "classnames": "2.2.6",
     "striptags": "3.1.1",
+    "less": "3.9.0",
     "postcss": "7.0.17",
     "postcss-advanced-variables": "3.0.0",
     "postcss-clean": "1.1.0",
@@ -59,7 +60,8 @@
     "postcss": "7.0.17",
     "css-loader": "3.2.0",
     "color-name": "1.1.4",
-    "eslint": "5.15.1"
+    "eslint": "5.15.1",
+    "less": "3.9.0"
   },
   "repository": {
     "type": "git",
