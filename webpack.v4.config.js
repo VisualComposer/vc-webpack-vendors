@@ -12,13 +12,13 @@ var _index = _interopRequireDefault(require("./index"));
 
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
-var tag = __dirname.split(_path.default.sep).pop();
+var tag = process.cwd().split(_path.default.sep).pop();
 
 module.exports = Object.assign({}, {
   devtool: 'eval',
   mode: 'development',
   entry: {
-    element: './' + tag + '/index.js',
+    element: process.cwd() + '/' + tag + '/index.js',
     vendor: (0, _index.default)()
   },
   output: {

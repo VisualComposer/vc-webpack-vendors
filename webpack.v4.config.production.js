@@ -14,7 +14,7 @@ var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorRepl
 
 var _webpackV4Config = _interopRequireDefault(require("./webpack.v4.config.js"));
 
-var tag = __dirname.split(_path.default.sep).pop();
+var tag = process.cwd().split(_path.default.sep).pop();
 
 delete _webpackV4Config.default.devtool;
 module.exports = Object.assign({}, _webpackV4Config.default, {
