@@ -22,7 +22,7 @@ module.exports = Object.assign({}, {
     vendor: (0, _index.default)()
   },
   output: {
-    path: _path.default.resolve(__dirname, 'public/dist/'),
+    path: _path.default.resolve(process.cwd(), 'public/dist/'),
     // Assets dist path
     publicPath: '.',
     // Used to generate URL's
