@@ -1,20 +1,10 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "main": "index.js",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
-    "base-64": "0.1.0",
-    "lodash": "4.17.15",
-    "prop-types": "15.7.2",
-    "raw-loader": "1.0.0",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "vc-cake": "0.8.0",
-    "pako": "1.0.10",
-    "react-tinymce": "0.7.0",
     "@babel/cli": "7.5.5",
     "@babel/core": "7.5.5",
     "@babel/plugin-proposal-class-properties": "7.5.5",
@@ -23,27 +13,59 @@
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.5.5",
     "@babel/runtime": "7.5.5",
+    "autoprefixer": "9.6.1",
     "babel-eslint": "10.0.3",
     "babel-loader": "8.0.6",
+    "base-64": "0.1.0",
     "classnames": "2.2.6",
-    "striptags": "3.1.1",
     "css-loader": "2.1.1",
     "exports-loader": "0.7.0",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "4.2.0",
     "fs-extra": "8.1.0",
+    "less": "3.10.3",
     "less-loader": "4.1.0",
+    "lodash": "4.17.15",
+    "pako": "1.0.10",
+    "postcss": "7.0.17",
+    "postcss-advanced-variables": "3.0.0",
+    "postcss-clean": "1.1.0",
+    "postcss-color-function": "4.1.0",
+    "postcss-conditionals": "2.1.0",
+    "postcss-custom-media": "7.0.8",
+    "postcss-custom-properties": "9.0.2",
+    "postcss-each": "0.10.0",
+    "postcss-loader": "3.0.0",
+    "postcss-math": "0.0.10",
+    "postcss-nested": "4.1.2",
+    "prop-types": "15.7.2",
+    "raw-loader": "1.0.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-tinymce": "0.7.0",
     "standard": "12.0.1",
+    "striptags": "3.1.1",
     "style-loader": "1.0.0",
     "terser-webpack-plugin": "1.4.1",
     "url-loader": "2.1.0",
+    "vc-cake": "0.8.0",
     "virtual-module-webpack-plugin": "0.4.1",
     "webpack": "4.29.6",
     "webpack-cli": "3.2.3"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {},
+  "resolutions": {
+    "core-js": "3.2.1",
+    "postcss": "7.0.17",
+    "css-loader": "3.2.0",
+    "color-name": "1.1.4",
+    "eslint": "5.15.1",
+    "less": "3.10.3"
   },
+  "browserslist": [
+    "ie >= 11",
+    "last 2 version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VisualComposer/vc-webpack-vendors.git"
@@ -52,6 +74,31 @@
     "webpack",
     "vendor"
   ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "public/dist/",
+      "tests/",
+      "**/public/js"
+    ],
+    "rules": {
+      "jsx-quotes": [
+        2,
+        "prefer-single"
+      ],
+      "import/no-webpack-loader-syntax": "off"
+    }
+  },
   "author": "Pavel I",
   "license": "GPL-3.0-or-later",
   "bugs": {
