@@ -8,7 +8,7 @@ var _webpack = _interopRequireDefault(require("webpack"));
 
 var _extractTextWebpackPlugin = _interopRequireDefault(require("extract-text-webpack-plugin"));
 
-var _index = _interopRequireDefault(require("./index"));
+var _index = _interopRequireDefault(require("vc-webpack-vendors/index"));
 
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
@@ -36,7 +36,7 @@ module.exports = Object.assign({}, {
   },
   optimization: {
     minimize: false,
-    runtimeChunk: false,
+    runtimeChunk: 'single',
     namedModules: true,
     splitChunks: {
       cacheGroups: {
@@ -56,9 +56,9 @@ module.exports = Object.assign({}, {
       }
     }
   },
-  plugins: [new _extractTextWebpackPlugin.default('[name].bundle.css'), new _webpack.default.NamedModulesPlugin(), new _webpackVendorReplace.default(tag + '/index.js')],
+  plugins: [ new _extractTextWebpackPlugin.default('[name].bundle.css'), new _webpack.default.NamedModulesPlugin(), new _webpackVendorReplace.default(tag + '/index.js') ],
   module: {
-    rules: [{
+    rules: [ {
       parser: {
         amd: false
       }
@@ -76,44 +76,44 @@ module.exports = Object.assign({}, {
       test: /\.css$/,
       use: _extractTextWebpackPlugin.default.extract({
         fallback: 'style-loader',
-        use: ['css-loader', {
+        use: [ 'css-loader', {
           loader: 'postcss-loader',
           options: {
-            plugins: function plugins() {
-              return [require('autoprefixer')()];
+            plugins: function plugins () {
+              return [ require('autoprefixer')() ];
             }
           }
-        }, 'less-loader']
+        }, 'less-loader' ]
       })
     }, {
       test: /\.less$/,
       use: _extractTextWebpackPlugin.default.extract({
         fallback: 'style-loader',
-        use: ['css-loader', {
+        use: [ 'css-loader', {
           loader: 'postcss-loader',
           options: {
-            plugins: function plugins() {
-              return [require('autoprefixer')()];
+            plugins: function plugins () {
+              return [ require('autoprefixer')() ];
             }
           }
-        }, 'less-loader']
+        }, 'less-loader' ]
       })
     }, // use ! to chain loaders./
-    {
-      test: /\.(png|jpe?g|gif)$/,
-      use: 'url-loader?limit=10000&name=/images/[name].[ext]?[hash]'
-    }, // inline base64 URLs for <=8k images, direct URLs for the rest.
-    {
-      test: /\.woff(2)?(\?.+)?$/,
-      use: 'url-loader?limit=10000&mimetype=application/font-woff&name=/fonts/[name].[ext]?[hash]'
-    }, {
-      test: /\.(ttf|eot|svg)(\?.+)?$/,
-      use: 'file-loader?name=/fonts/[name].[ext]?[hash]'
-    }, {
-      test: /\.raw(\?v=\d+\.\d+\.\d+)?$/,
-      use: 'raw-loader' // { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery&$=jquery' }
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: 'url-loader?limit=10000&name=/images/[name].[ext]?[hash]'
+      }, // inline base64 URLs for <=8k images, direct URLs for the rest.
+      {
+        test: /\.woff(2)?(\?.+)?$/,
+        use: 'url-loader?limit=10000&mimetype=application/font-woff&name=/fonts/[name].[ext]?[hash]'
+      }, {
+        test: /\.(ttf|eot|svg)(\?.+)?$/,
+        use: 'file-loader?name=/fonts/[name].[ext]?[hash]'
+      }, {
+        test: /\.raw(\?v=\d+\.\d+\.\d+)?$/,
+        use: 'raw-loader' // { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery&$=jquery' }
 
-    }]
+      } ]
   },
   resolve: {
     alias: {
@@ -121,4 +121,3 @@ module.exports = Object.assign({}, {
     }
   }
 });
-
