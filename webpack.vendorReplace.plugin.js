@@ -47,7 +47,6 @@ var VendorReplacePlugin =
                   var jsonpFunction = compilation.chunkTemplate.outputOptions.jsonpFunction;
                   var globalObject = compilation.chunkTemplate.outputOptions.globalObject;
                   var source = new _webpackSources.ConcatSource();
-                  console.warn('source', globalObject);
 
                   source.add("(".concat(globalObject, "[").concat(JSON.stringify(jsonpFunction), "] = ").concat(globalObject, "[").concat(JSON.stringify(jsonpFunction), "] || []).push([").concat(JSON.stringify(chunk.ids), ","));
                   source.add(modules);
