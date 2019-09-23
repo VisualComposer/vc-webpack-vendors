@@ -84,7 +84,8 @@ module.exports = Object.assign({}, {
             }
           }
         }, 'less-loader' ]
-      })
+      }),
+      exclude: [ /styles\.css/, /editor\.css/ ]
     }, {
       test: /\.less$/,
       use: _extractTextWebpackPlugin.default.extract({
