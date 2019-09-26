@@ -33,4 +33,3 @@ module.exports = Object.assign({}, _webpackV4Config.default, {
     }
   }), new _webpackVendorReplace.default(tag + '/index.js')]
 });
-
