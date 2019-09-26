@@ -65,6 +65,14 @@ This package contains Visual Composer vendors for backward compatibility and ele
       "import/no-webpack-loader-syntax": "off"
     }
   },
+  "resolutions": {
+    "core-js": "3.2.1",
+    "postcss": "7.0.18",
+    "css-loader": "3.2.0",
+    "color-name": "1.1.4",
+    "eslint": "5.15.1",
+    "less": "3.10.3"
+  },
   "author": "",
   "license": "ISC"
 }
