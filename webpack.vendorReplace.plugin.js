@@ -31,7 +31,7 @@ var VendorReplacePlugin =
             modules.map(function (module) {
               if (module.id) {
                 // Replace ../../node_modules
-                module.id = module.id.replace(/(\.\.\/)+(node_modules)/, './$2/test1');
+                module.id = module.id.replace(/(\.\.\/)+(node_modules)/, './$2');
               }
 
               return module;
