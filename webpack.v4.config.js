@@ -8,7 +8,7 @@ var _webpack = _interopRequireDefault(require("webpack"));
 
 var _extractTextWebpackPlugin = _interopRequireDefault(require("extract-text-webpack-plugin"));
 
-var _index = _interopRequireDefault(require("vc-webpack-vendors/index"));
+var _index = _interopRequireDefault(require("./index"));
 
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
