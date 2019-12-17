@@ -16,9 +16,10 @@ var _webpackSources = require("webpack-sources");
 var VendorReplacePlugin =
   /*#__PURE__*/
   function () {
-    function VendorReplacePlugin (entry) {
+    function VendorReplacePlugin (entry, type = 'element') {
       (0, _classCallCheck2.default)(this, VendorReplacePlugin);
       this.entry = entry;
+      this.type = type;
     }
 
     (0, _createClass2.default)(VendorReplacePlugin, [ {
@@ -32,6 +33,9 @@ var VendorReplacePlugin =
               if (module.id) {
                 // Replace ../../node_modules
                 module.id = module.id.replace(/(\.\.\/)+(node_modules)/, './$2');
+              }
+              if (_this.type === 'addon' && module.id && module.id.indexOf(_this.entry) !== -1) {
+                module.id = './addon/' + _this.entry;
               }
 
               return module;
@@ -51,7 +55,11 @@ var VendorReplacePlugin =
                   source.add("(".concat(globalObject, "[").concat(JSON.stringify(jsonpFunction), "] = ").concat(globalObject, "[").concat(JSON.stringify(jsonpFunction), "] || []).push([").concat(JSON.stringify(chunk.ids), ","));
                   source.add(modules);
 
-                  source.add(",[['./".concat(_this.entry, "']]])"));
+                  if (_this.type === 'addon') {
+                    source.add(",[['./addon/".concat(_this.entry, "']]])"));
+                  } else {
+                    source.add(",[['./".concat(_this.entry, "']]])"));
+                  }
 
                   return source;
                 };
