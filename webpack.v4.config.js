@@ -12,7 +12,11 @@ var _index = _interopRequireDefault(require("./index"));
 
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
-var tag = process.cwd().split(_path.default.sep).pop();
+var split = process.cwd().split(_path.default.sep);
+
+var tag = split.pop();
+
+var type = split.pop().toLowerCase().indexOf('addon') !== -1 ? 'addon' : 'element';
 
 module.exports = Object.assign({}, {
   devtool: 'eval',
@@ -56,7 +60,7 @@ module.exports = Object.assign({}, {
       }
     }
   },
-  plugins: [ new _extractTextWebpackPlugin.default('[name].bundle.css'), new _webpack.default.NamedModulesPlugin(), new _webpackVendorReplace.default(tag + '/index.js') ],
+  plugins: [ new _extractTextWebpackPlugin.default('[name].bundle.css'), new _webpack.default.NamedModulesPlugin(), new _webpackVendorReplace.default(tag + '/index.js', type) ],
   module: {
     rules: [ {
       parser: {

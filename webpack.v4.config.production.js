@@ -14,7 +14,11 @@ var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorRepl
 
 var _webpackV4Config = _interopRequireDefault(require("./webpack.v4.config.js"));
 
-var tag = process.cwd().split(_path.default.sep).pop();
+var split = process.cwd().split(_path.default.sep);
+
+var tag = split.pop();
+
+var type = split.pop().toLowerCase().indexOf('addon') !== -1 ? 'addon' : 'element';
 
 delete _webpackV4Config.default.devtool;
 module.exports = Object.assign({}, _webpackV4Config.default, {
@@ -31,5 +35,5 @@ module.exports = Object.assign({}, _webpackV4Config.default, {
     'process.env': {
       NODE_ENV: JSON.stringify('production')
     }
-  }), new _webpackVendorReplace.default(tag + '/index.js')]
+  }), new _webpackVendorReplace.default(tag + '/index.js', type)]
 });
