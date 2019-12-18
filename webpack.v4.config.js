@@ -15,7 +15,10 @@ var _index = _interopRequireDefault(require("./index"));
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
 var manifest = JSON.parse(_fs.default.readFileSync(_path.default.join(process.cwd(), 'manifest.json')));
-var tag = Object.keys(manifest.elements)[0]
+
+var type = Object.keys(manifest)[0];
+
+var tag = Object.keys(manifest.elements)[0];
 
 module.exports = Object.assign({}, {
   devtool: 'eval',

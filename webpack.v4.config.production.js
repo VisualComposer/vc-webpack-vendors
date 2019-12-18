@@ -4,6 +4,8 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _path = _interopRequireDefault(require("path"));
 
+var _fs = _interopRequireDefault(require("fs"));
+
 var _webpack = _interopRequireDefault(require("webpack"));
 
 var _terserWebpackPlugin = _interopRequireDefault(require("terser-webpack-plugin"));
@@ -14,13 +16,14 @@ var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorRepl
 
 var _webpackV4Config = _interopRequireDefault(require("./webpack.v4.config.js"));
 
-var split = process.cwd().split(_path.default.sep);
+var manifest = JSON.parse(_fs.default.readFileSync(_path.default.join(process.cwd(), 'manifest.json')));
 
-var tag = split.pop();
+var type = Object.keys(manifest)[0];
 
-var type = split.pop().toLowerCase().indexOf('addon') !== -1 ? 'addon' : 'element';
+var tag = Object.keys(manifest.elements)[0];
 
 delete _webpackV4Config.default.devtool;
+
 module.exports = Object.assign({}, _webpackV4Config.default, {
   mode: 'production',
   optimization: Object.assign({}, _webpackV4Config.default.optimization, {

@@ -16,7 +16,7 @@ var _webpackSources = require("webpack-sources");
 var VendorReplacePlugin =
   /*#__PURE__*/
   function () {
-    function VendorReplacePlugin (entry, type = 'element') {
+    function VendorReplacePlugin (entry, type = 'elements') {
       (0, _classCallCheck2.default)(this, VendorReplacePlugin);
       this.entry = entry;
       this.type = type;
@@ -34,7 +34,7 @@ var VendorReplacePlugin =
                 // Replace ../../node_modules
                 module.id = module.id.replace(/(\.\.\/)+(node_modules)/, './$2');
               }
-              if (_this.type === 'addon' && module.id && module.id.indexOf(_this.entry) !== -1) {
+              if (_this.type === 'addons' && module.id && module.id.indexOf(_this.entry) !== -1) {
                 module.id = './addon/' + _this.entry;
               }
 
@@ -55,7 +55,7 @@ var VendorReplacePlugin =
                   source.add("(".concat(globalObject, "[").concat(JSON.stringify(jsonpFunction), "] = ").concat(globalObject, "[").concat(JSON.stringify(jsonpFunction), "] || []).push([").concat(JSON.stringify(chunk.ids), ","));
                   source.add(modules);
 
-                  if (_this.type === 'addon') {
+                  if (_this.type === 'addons') {
                     source.add(",[['./addon/".concat(_this.entry, "']]])"));
                   } else {
                     source.add(",[['./".concat(_this.entry, "']]])"));
