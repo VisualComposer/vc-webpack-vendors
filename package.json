@@ -1,7 +1,7 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "main": "index.js",
   "devDependencies": {},
   "dependencies": {
@@ -63,6 +63,7 @@
   },
   "scripts": {
     "test": "webpack --version && webpack --config=./webpack.v4.config.js --progress --colors",
+    "test-production": "webpack --version && webpack --config=./webpack.v4.config.production.js --progress --colors",
     "standard": "standard"
   },
   "resolutions": {
