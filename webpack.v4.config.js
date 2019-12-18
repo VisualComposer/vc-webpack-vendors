@@ -4,6 +4,8 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _path = _interopRequireDefault(require("path"));
 
+var _fs = _interopRequireDefault(require("fs"));
+
 var _webpack = _interopRequireDefault(require("webpack"));
 
 var _extractTextWebpackPlugin = _interopRequireDefault(require("extract-text-webpack-plugin"));
@@ -12,11 +14,8 @@ var _index = _interopRequireDefault(require("./index"));
 
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
-var split = process.cwd().split(_path.default.sep);
-
-var tag = split.pop();
-
-var type = split.pop().toLowerCase().indexOf('addon') !== -1 ? 'addon' : 'element';
+var manifest = JSON.parse(_fs.default.readFileSync(_path.default.join(process.cwd(), 'manifest.json')));
+var tag = Object.keys(manifest.elements)[0]
 
 module.exports = Object.assign({}, {
   devtool: 'eval',
