@@ -20,7 +20,7 @@ var manifest = JSON.parse(_fs.default.readFileSync(_path.default.join(process.cw
 
 var type = Object.keys(manifest)[0];
 
-var tag = Object.keys(manifest.elements)[0];
+var tag = Object.keys(manifest[type])[0];
 
 delete _webpackV4Config.default.devtool;
 
