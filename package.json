@@ -21,7 +21,7 @@
     "classnames": "2.2.6",
     "create-react-class": "15.6.3",
     "css-loader": "3.4.0",
-    "cypress": "3.8.0",
+    "cypress": "4.3.0",
     "cypress-log-to-output": "1.0.7",
     "eslint": "6.7.2",
     "exports-loader": "0.7.0",
