@@ -23,7 +23,13 @@ module.exports = function webpackVendors() {
         'pako',
         'base-64',
         '@babel/runtime/helpers/objectSpread.js',
-        '@babel/runtime/helpers/defineProperty.js'
+        '@babel/runtime/helpers/defineProperty.js',
+        'caniuse-lite',
+        'postcss/lib',
+        'clean-css',
+        'autoprefixer',
+        'immutable',
+'bn.js'
     ].concat(Object.values(aliasesMap)))).map(function (i) {
         return i.replace('./node_modules/', '');
     });
