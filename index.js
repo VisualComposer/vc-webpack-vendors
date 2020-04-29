@@ -25,11 +25,11 @@ module.exports = function webpackVendors() {
         '@babel/runtime/helpers/objectSpread.js',
         '@babel/runtime/helpers/defineProperty.js',
         'caniuse-lite',
-        'postcss/lib',
+        'postcss',
         'clean-css',
         'autoprefixer',
         'immutable',
-'bn.js'
+        'bn.js'
     ].concat(Object.values(aliasesMap)))).map(function (i) {
         return i.replace('./node_modules/', '');
     });

@@ -1,7 +1,7 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "main": "index.js",
   "devDependencies": {},
   "dependencies": {
