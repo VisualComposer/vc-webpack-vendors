@@ -30,7 +30,7 @@ var VendorReplacePlugin =
         compiler.hooks.compilation.tap('VendorReplacePlugin', function (compilation) {
           var handler = function handler (modules) {
             modules.map(function (module) {
-              if (module.id) {
+              if (typeof module.id === 'string') {
                 // Replace ../../node_modules
                 module.id = module.id.replace(/(\.\.\/)+(node_modules)/, './$2');
               }
