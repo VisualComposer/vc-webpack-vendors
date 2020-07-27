@@ -59,39 +59,50 @@ export default Object.assign({}, {
     new VendorReplacePlugin(tag + '/index.js', type)
   ],
   module: {
-    rules: [{
-      parser: {
-        amd: false
-      }
-    }, {
-      test: /\.mjs$/,
-      include: /node_modules/,
-      type: 'javascript/auto'
-    }, {
-      test: /\.js$/,
-      use: {
-        loader: 'babel-loader'
+    rules: [
+      {
+        parser: {
+          amd: false
+        }
       },
-      exclude: /node_modules/
-    }, {
-      test: /\.css|\.less$/,
-      exclude: [/styles\.css/, /editor\.css/],
-      use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto'
+      },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader'
         },
-        'css-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: function plugins () {
-              return [require('autoprefixer')()];
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css|\.less$/,
+        exclude: [/styles\.css/, /editor\.css/],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function plugins () {
+                return [require('autoprefixer')()];
+              }
             }
-          }
-        },
-        'less-loader'
-      ],
-    }, // use ! to chain loaders./
+          },
+          'less-loader'
+        ]
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {}
+        }
+      },
       {
         test: /\.(png|jpe?g|gif)$/,
         use: 'url-loader?limit=10000&name=/images/[name].[ext]?[hash]'
@@ -100,11 +111,12 @@ export default Object.assign({}, {
         test: /\.woff(2)?(\?.+)?$/,
         use: 'url-loader?limit=10000&mimetype=application/font-woff&name=/fonts/[name].[ext]?[hash]'
       }, {
-        test: /\.(ttf|eot|svg)(\?.+)?$/,
+        test: /\.(ttf|eot)(\?.+)?$/,
         use: 'file-loader?name=/fonts/[name].[ext]?[hash]'
       }, {
         test: /\.raw(\?v=\d+\.\d+\.\d+)?$/,
         use: 'raw-loader' // { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery&$=jquery' }
-      }]
+      }
+    ]
   }
 })

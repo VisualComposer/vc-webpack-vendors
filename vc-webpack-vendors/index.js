@@ -9,6 +9,8 @@ export default class TestVcWebpack extends React.Component {
     let rawAuto = require('./test-raw.raw')
     let rawManual = require('raw-loader!./test-raw.txt')
     let css = require('./test-css.css')
+    let withSvg = require('./test-svg-in-less.css')
+    let justSvg = require('./bold.svg')
     let less = require('./test-less.less')
     let ignoreStyleCss = require('raw-loader!./styles.css')
     let ignoreEditorCss = require('raw-loader!./editor.css')

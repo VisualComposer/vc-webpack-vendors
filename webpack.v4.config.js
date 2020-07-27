@@ -96,8 +96,13 @@ var _default = Object.assign({}, {
           }
         }
       }, 'less-loader']
-    }, // use ! to chain loaders./
-    {
+    }, {
+      test: /\.svg/,
+      use: {
+        loader: 'svg-url-loader',
+        options: {}
+      }
+    }, {
       test: /\.(png|jpe?g|gif)$/,
       use: 'url-loader?limit=10000&name=/images/[name].[ext]?[hash]'
     }, // inline base64 URLs for <=8k images, direct URLs for the rest.
@@ -105,7 +110,7 @@ var _default = Object.assign({}, {
       test: /\.woff(2)?(\?.+)?$/,
       use: 'url-loader?limit=10000&mimetype=application/font-woff&name=/fonts/[name].[ext]?[hash]'
     }, {
-      test: /\.(ttf|eot|svg)(\?.+)?$/,
+      test: /\.(ttf|eot)(\?.+)?$/,
       use: 'file-loader?name=/fonts/[name].[ext]?[hash]'
     }, {
       test: /\.raw(\?v=\d+\.\d+\.\d+)?$/,
