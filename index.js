@@ -24,10 +24,8 @@ module.exports = function webpackVendors() {
         'base-64',
         '@babel/runtime/helpers/objectSpread.js',
         '@babel/runtime/helpers/defineProperty.js',
-        'caniuse-lite',
         'postcss',
         'clean-css',
-        'autoprefixer',
         'immutable',
         'bn.js'
     ].concat(Object.values(aliasesMap)))).map(function (i) {
