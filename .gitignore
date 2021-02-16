@@ -1,4 +1,6 @@
 node_modules/*
 yarn.lock
 public/*
+test/public/*
 .idea/*
+builder/
