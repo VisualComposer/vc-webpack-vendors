@@ -34,7 +34,7 @@
     "babel-eslint": "10.1.0",
     "babel-jest": "26.6.3",
     "babel-loader": "8.2.2",
-    "base-64": "0.1.0",
+    "base-64": "1.0.0",
     "classnames": "2.2.6",
     "create-react-class": "15.7.0",
     "css-loader": "4.2.2",
