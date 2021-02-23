@@ -1,0 +1,32 @@
+version: '2.1'
+orbs:
+  node: circleci/node@4.1.1
+jobs:
+  testApp:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: node --version && npm --version && yarn --version
+          name: Versions output
+      - run:
+          command: git clone --depth 1 "git@github.com:visualcomposer/builder" --branch "master"
+          name: Clone Visual Composer
+      - run:
+          command: yarn test
+          name: Test Element Building
+      - run:
+          command: yarn test-builder
+          name: Test Builder Building
+      - run:
+          command: yarn test-builder-production
+          name: Test Builder Production Building
+workflows:
+  testApp:
+    jobs:
+      - testApp
