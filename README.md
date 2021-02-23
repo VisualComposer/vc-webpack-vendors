@@ -1,4 +1,5 @@
 # vc-webpack-vendors
+[![VC Webpack Vendors](https://circleci.com/gh/VisualComposer/vc-webpack-vendors.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 
 This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.
 
