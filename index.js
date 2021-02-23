@@ -33,6 +33,13 @@ module.exports = function webpackVendors() {
         'immutable',
         'bn.js'
     ].concat(Object.values(aliasesMap)).map(function (i) {
-        return i.replace('./node_modules/', '');
+        var key = i.replace('./node_modules/', '');
+
+        // @babel/runtime have strictly specified exports
+        if (key.indexOf('@babel/runtime') !== -1) {
+            key = key.replace('/index.js', '');
+        }
+
+        return key;
     })));
 };
