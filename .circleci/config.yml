@@ -20,7 +20,6 @@ jobs:
       - run:
           command: yarn test
           name: Test Element Building
-          name: Clone Visual Composer
       - run:
           command: yarn test-aliases
           name: Test Vendor Aliases
