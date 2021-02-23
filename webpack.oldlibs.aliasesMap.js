@@ -2,14 +2,14 @@ var aliasesMap = {
   // Left side - OLD Value
   // Right side - Latest actual value
   './node_modules/react/react.js': './node_modules/react/index.js',
-  './node_modules/babel-runtime/helpers/extends.js': './node_modules/@babel/runtime/helpers/extends.js',
-  './node_modules/babel-runtime/helpers/classCallCheck.js': './node_modules/@babel/runtime/helpers/classCallCheck.js',
-  './node_modules/babel-runtime/helpers/possibleConstructorReturn.js': './node_modules/@babel/runtime/helpers/possibleConstructorReturn.js',
-  './node_modules/babel-runtime/helpers/createClass.js': './node_modules/@babel/runtime/helpers/createClass.js',
-  './node_modules/babel-runtime/helpers/inherits.js': './node_modules/@babel/runtime/helpers/inherits.js',
-  './node_modules/babel-runtime/helpers/typeof.js': './node_modules/@babel/runtime/helpers/typeof.js',
-  './node_modules/babel-runtime/helpers/get.js': './node_modules/@babel/runtime/helpers/get.js',
-  './node_modules/babel-runtime/helpers/slicedToArray.js': './node_modules/@babel/runtime/helpers/slicedToArray.js',
+  './node_modules/babel-runtime/helpers/extends.js': './node_modules/@babel/runtime/helpers/extends',
+  './node_modules/babel-runtime/helpers/classCallCheck.js': './node_modules/@babel/runtime/helpers/classCallCheck',
+  './node_modules/babel-runtime/helpers/possibleConstructorReturn.js': './node_modules/@babel/runtime/helpers/possibleConstructorReturn',
+  './node_modules/babel-runtime/helpers/createClass.js': './node_modules/@babel/runtime/helpers/createClass',
+  './node_modules/babel-runtime/helpers/inherits.js': './node_modules/@babel/runtime/helpers/inherits',
+  './node_modules/babel-runtime/helpers/typeof.js': './node_modules/@babel/runtime/helpers/typeof',
+  './node_modules/babel-runtime/helpers/get.js': './node_modules/@babel/runtime/helpers/get',
+  './node_modules/babel-runtime/helpers/slicedToArray.js': './node_modules/@babel/runtime/helpers/slicedToArray',
   './node_modules/babel-runtime/core-js.js': './node_modules/core-js/index.js',
   './node_modules/core-js/library/index.js': './node_modules/core-js/index.js',
   './node_modules/babel-runtime/core-js/symbol.js': './node_modules/core-js/es/symbol/index.js',
@@ -55,6 +55,17 @@ var aliasesMap = {
   './node_modules/babel-runtime/core-js/get-iterator.js': './node_modules/core-js/internals/get-iterator.js',
   './node_modules/babel-runtime/core-js/is-iterable.js': './node_modules/core-js/internals/is-iterable.js',
   './node_modules/core-js/library/fn/object/get-own-property-descriptor.js': './node_modules/core-js/es/object/get-own-property-descriptor.js',
+  // 7.12-13. babel runtime migration
+  './node_modules/@babel/runtime/helpers/objectSpread.js': './node_modules/@babel/runtime/helpers/objectSpread',
+  './node_modules/@babel/runtime/helpers/defineProperty.js': './node_modules/@babel/runtime/helpers/defineProperty',
+  './node_modules/@babel/runtime/helpers/extends.js': './node_modules/@babel/runtime/helpers/extends',
+  './node_modules/@babel/runtime/helpers/classCallCheck.js': './node_modules/@babel/runtime/helpers/classCallCheck',
+  './node_modules/@babel/runtime/helpers/possibleConstructorReturn.js': './node_modules/@babel/runtime/helpers/possibleConstructorReturn',
+  './node_modules/@babel/runtime/helpers/createClass.js': './node_modules/@babel/runtime/helpers/createClass',
+  './node_modules/@babel/runtime/helpers/inherits.js': './node_modules/@babel/runtime/helpers/inherits',
+  './node_modules/@babel/runtime/helpers/typeof.js': './node_modules/@babel/runtime/helpers/typeof',
+  './node_modules/@babel/runtime/helpers/get.js': './node_modules/@babel/runtime/helpers/get',
+  './node_modules/@babel/runtime/helpers/slicedToArray.js': './node_modules/@babel/runtime/helpers/slicedToArray'
 }
 
 module.exports = aliasesMap
