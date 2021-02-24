@@ -1,45 +1,45 @@
 # vc-webpack-vendors
+[![VC Webpack Vendors](https://circleci.com/gh/VisualComposer/vc-webpack-vendors.svg?style=shield)](https://www.npmjs.com/package/vc-webpack-vendors)
 
-This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.
+This package contains Visual Composer dependent packages for building tools.
 
-- Update this package in package.json always when you updating an element
+## Use This package in Elements
+- Add it into package.json `vc-webpack-vendors` (https://www.npmjs.com/package/vc-webpack-vendors)
+- `yarn add vc-webpack-vendors`
+- Update package.json with:
+```
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --config=../node_modules/vc-webpack-vendors/webpack.v4.config.js --progress --color",
+    "build-production": "./node_modules/.bin/webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.production.js --progress -p",
+    "watch": "./node_modules/.bin/webpack --config=../node_modules/vc-webpack-vendors/webpack.v4.config.js --progress --color --watch"
+  },
+```
+- To build development version of element just run `yarn build`
+- For watch for changes `yarn watch`
+- To build production ready JS files `yarn build-production`
 
-- Package.json example:
+
+### Elements package.json example:
 ```
 {
-  "name": "test-vc-webpack-vendors",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "standard": "standard --version && standard",
-    "build": "webpack --version && webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.js --progress --colors",
-    "build-production": "webpack --version && webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.production.js -p",
-    "watch": "webpack --version && webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.js --progress --colors --watch"
-  },
-  "devDependencies": {
-    "vc-webpack-vendors": "https://github.com/AngeIII/vc-webpack-vendors.git#test-wepback-update"
-  },
-  "resolutions": {
-    "core-js": "3.2.1",
-    "postcss": "7.0.18",
-    "css-loader": "3.2.0",
-    "color-name": "1.1.4",
-    "eslint": "5.15.1",
-    "less": "3.10.3"
-  },
-  "browserslist": [
-    "ie >= 11",
-    "last 2 version"
-  ],
+  "name": "vcwb",
+  "version": "dev",
+  "license": "SEE LICENSE IN <https://visualcomposer.com/terms-of-use/>",
+  "description": "Visual Composer Website Builder element",
+  "main": "index.php",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VisualComposer/vc-webpack-vendors.git"
+    "url": "git@github.com:Visualcomposer/builder.git"
   },
-  "keywords": [
-    "webpack",
-    "vendor"
-  ],
+  "scripts": {
+    "standard": "standard --version && standard",
+    "build": "../node_modules/.bin/webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.js --progress --colors",
+    "build-production": "./node_modules/.bin/webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.production.js --progress -p",
+    "watch": "./node_modules/.bin/webpack --config=./node_modules/vc-webpack-vendors/webpack.v4.config.js --progress --colors --watch"
+  },
+  "devDependencies": {
+    "vc-webpack-vendors": "2.9.2"
+  },
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -73,8 +73,16 @@ This package contains Visual Composer vendors for backward compatibility and ele
     "eslint": "5.15.1",
     "less": "3.10.3"
   },
-  "author": "",
-  "license": "ISC"
+  "browserslist": [
+    ">1%",
+    "ios_saf 8",
+    "ie 10",
+    "ie 11"
+  ]
 }
-
 ```
+- Make sure to keep up to day "resolutions", "browserslist" and other versions.
+
+
+### See more on element Boilerplate
+- https://github.com/VisualComposer/elementBoilerplate
