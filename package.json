@@ -1,7 +1,7 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "main": "index.js",
   "devDependencies": {
     "color-blend": "git://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322",
