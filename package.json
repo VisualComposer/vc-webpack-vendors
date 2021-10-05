@@ -10,7 +10,7 @@
     "form-serialize": "0.7.2",
     "immutable": "4.0.0-rc.15",
     "mobile-detect": "1.4.5",
-    "node-object-hash": "2.1.2",
+    "node-object-hash": "2.3.10",
     "react-addons-shallow-compare": "15.6.2",
     "react-color": "2.19.3",
     "react-custom-scrollbars": "4.2.1",
