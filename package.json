@@ -36,6 +36,7 @@
     "babel-loader": "8.2.2",
     "base-64": "1.0.0",
     "classnames": "2.3.1",
+    "core-js": "3.18.1",
     "create-react-class": "15.7.0",
     "css-loader": "4.2.2",
     "cypress": "5.0.0",
@@ -92,7 +93,7 @@
     "test-builder-production": "webpack --version && webpack --config=./test/webpack.config.production.4x.babel.js -p --progress --colors"
   },
   "resolutions": {
-    "core-js": "3.2.1",
+    "core-js": "3.18.1",
     "postcss": "7.0.32",
     "css-loader": "4.2.2",
     "color-name": "1.1.4",
