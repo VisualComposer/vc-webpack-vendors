@@ -16,7 +16,7 @@
     "react-custom-scrollbars": "4.2.1",
     "react-datepicker": "3.5.0",
     "react-slick": "0.28.0",
-    "react-sortable-hoc": "1.11.0",
+    "react-sortable-hoc": "2.0.0",
     "react-textarea-autosize": "8.3.3",
     "reactcss": "1.2.3",
     "webfontloader": "1.6.28"
