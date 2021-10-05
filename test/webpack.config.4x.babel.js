@@ -24,7 +24,7 @@ export default {
     vendor: webpackVendors()
   },
   output: {
-    path: path.resolve(__dirname, 'public/dist/'), // Assets dist path
+    path: path.resolve(__dirname, '../builder/public/dist/'), // Assets dist path
     publicPath: '.', // Used to generate URL's
     filename: '[name].bundle.js', // Main bundle file
     chunkFilename: '[name].bundle.js',
@@ -63,6 +63,7 @@ export default {
         services: [
           'dataManager',
           'utils',
+          'roleManager',
           'document',
           'wordpress-post-data',
           'dataProcessor',
@@ -85,6 +86,7 @@ export default {
         services: [
           'dataManager',
           'utils',
+          'roleManager',
           'document',
           'wordpress-post-data',
           'dataProcessor',
@@ -178,6 +180,6 @@ export default {
     ]
   },
   resolve: {
-    alias: { public: path.resolve(__dirname, '../builder/public') }
+    alias: { public: path.resolve(__dirname, '../builder/public/') }
   }
 }
