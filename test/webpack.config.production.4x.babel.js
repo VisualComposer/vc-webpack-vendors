@@ -103,7 +103,9 @@ export default Object.assign({}, config, {
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production'),
+        DEBUG: false,
+        platform: 'unix'
       }
     })
   ]

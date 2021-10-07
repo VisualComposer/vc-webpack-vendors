@@ -29,7 +29,7 @@ module.exports = function webpackVendors() {
         '@babel/runtime/helpers/objectSpread',
         '@babel/runtime/helpers/defineProperty',
         'postcss',
-        'clean-css',
+        // 'clean-css',
         'immutable',
         'bn.js'
     ].concat(Object.values(aliasesMap)).map(function (i) {
@@ -38,6 +38,7 @@ module.exports = function webpackVendors() {
         // @babel/runtime have strictly specified exports
         if (key.indexOf('@babel/runtime') !== -1) {
             key = key.replace('/index.js', '');
+            key = key.replace('.js', ''); // fix for 7.15.4
         }
 
         return key;
