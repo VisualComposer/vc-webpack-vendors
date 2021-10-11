@@ -13,7 +13,7 @@ var _fs = _interopRequireDefault(require("fs"));
 
 var _index = _interopRequireDefault(require("./index"));
 
-var _webpackVendorReplace = _interopRequireDefault(require("./lib/webpack.vendorReplace.plugin"));
+var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
 var _miniCssExtractPlugin = _interopRequireDefault(require("mini-css-extract-plugin"));
 

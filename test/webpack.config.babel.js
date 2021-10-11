@@ -2,7 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import VirtualModulesPlugin from 'webpack-virtual-modules'
-import VcWebpackCustomAliasPlugin from '../lib/webpack.plugin.customAlias'
+import VcWebpackCustomAliasPlugin from '../webpack.plugin.customAlias'
 import webpackVendors from '../index'
 import Collector from '../builder/tools/webpack-collector-5x'
 

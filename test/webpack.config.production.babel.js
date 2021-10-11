@@ -5,8 +5,8 @@ import VirtualModulesPlugin from 'webpack-virtual-modules'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 
 import Collector from '../builder/tools/webpack-collector-5x'
-import config from './webpack.config.4x.babel'
-import VcWebpackCustomAliasPlugin from '../lib/webpack.plugin.customAlias'
+import config from './webpack.config.babel'
+import VcWebpackCustomAliasPlugin from '../webpack.plugin.customAlias'
 
 const virtualModules = new VirtualModulesPlugin({
   'node_modules/jquery/dist/jquery.js': 'module.exports = window.jQuery;',

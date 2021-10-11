@@ -23,7 +23,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 var JavascriptModulesPlugin = require('webpack/lib/javascript/JavascriptModulesPlugin')
-var defaultAliasesMap = require('./lib/webpack.oldlibs.aliasesMap')
+var defaultAliasesMap = require('./webpack.oldlibs.aliasesMap')
 
 /**
  * This plugin is used to create backward compatibility aliases for un-updated old elements or any other packages

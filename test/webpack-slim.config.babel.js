@@ -1,7 +1,5 @@
 import path from 'path'
-import fs from 'fs'
 import vendors from '../index'
-import VendorReplacePlugin from '../webpack.vendorReplace.plugin'
 import VirtualModulesPlugin from 'webpack-virtual-modules'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import Collector from '../builder/tools/webpack-collector-5x'

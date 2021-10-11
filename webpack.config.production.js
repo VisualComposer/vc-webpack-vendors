@@ -10,7 +10,7 @@ var _webpack = _interopRequireDefault(require("webpack"));
 
 var _terserWebpackPlugin = _interopRequireDefault(require("terser-webpack-plugin"));
 
-var _webpackVendorReplace = _interopRequireDefault(require("./lib/webpack.vendorReplace.plugin"));
+var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
 var _miniCssExtractPlugin = _interopRequireDefault(require("mini-css-extract-plugin"));
 
