@@ -12,7 +12,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var aliasesMap = require('./webpack.oldlibs.aliasesMap');
+var aliasesMap = require('./lib/webpack.oldlibs.aliasesMap');
 
 module.exports = function webpackVendors() {
     return _toConsumableArray(new Set([
@@ -29,7 +29,7 @@ module.exports = function webpackVendors() {
         '@babel/runtime/helpers/objectSpread',
         '@babel/runtime/helpers/defineProperty',
         'postcss',
-        'clean-css',
+        // 'clean-css',
         'immutable',
         'bn.js'
     ].concat(Object.values(aliasesMap)).map(function (i) {
@@ -38,6 +38,7 @@ module.exports = function webpackVendors() {
         // @babel/runtime have strictly specified exports
         if (key.indexOf('@babel/runtime') !== -1) {
             key = key.replace('/index.js', '');
+            key = key.replace('.js', ''); // fix for 7.15.4
         }
 
         return key;

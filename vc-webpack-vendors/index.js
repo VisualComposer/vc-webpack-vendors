@@ -1,5 +1,7 @@
 import React from 'react'
-
+// import '../builder/public/sources/less/states/common.less'
+// import '../builder/public/sources/less/wpbackend-switcher/init.less'
+// import '../builder/public/components/deactivationFeedbackPopup/deactivationFeedbackPopup.js'
 export default class TestVcWebpack extends React.Component {
   render () {
     // testing @babel/preset-env

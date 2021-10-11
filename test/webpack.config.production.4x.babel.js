@@ -1,12 +1,16 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
-import VirtualModulePlugin from 'virtual-module-webpack-plugin'
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import VirtualModulesPlugin from 'webpack-virtual-modules'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 
-import Collector from '../builder/tools/webpack-collector-4x'
+import Collector from '../builder/tools/webpack-collector-5x'
 import config from './webpack.config.4x.babel'
-import VcWebpackCustomAliasPlugin from '../webpack.plugin.customAlias'
+import VcWebpackCustomAliasPlugin from '../lib/webpack.plugin.customAlias'
+
+const virtualModules = new VirtualModulesPlugin({
+  'node_modules/jquery/dist/jquery.js': 'module.exports = window.jQuery;',
+})
 
 delete config.devtool
 
@@ -15,8 +19,9 @@ export default Object.assign({}, config, {
   optimization: {
     minimize: true,
     runtimeChunk: 'single',
-    namedChunks: true, // MUST BE true even for production
-    namedModules: true, // MUST BE true even for production
+    mangleExports: false,
+    chunkIds: 'named',
+    moduleIds: 'named',
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -24,9 +29,9 @@ export default Object.assign({}, config, {
           chunks: 'initial',
           name: 'vendor',
           test: 'vendor',
-          enforce: true
-        }
-      }
+          enforce: true,
+        },
+      },
     },
     minimizer: [
       new TerserPlugin({
@@ -34,21 +39,17 @@ export default Object.assign({}, config, {
           safari10: true
         }
       }),
-      new OptimizeCSSAssetsPlugin()
-    ]
+      new CssMinimizerPlugin(),
+    ],
   },
   plugins: [
     new Collector({
       wp: {
-        modules: [
-          'layout',
-          'wordpressWorkspace',
-          'insights',
-          'elementLimit'
-        ],
+        modules: ['layout', 'wordpressWorkspace', 'insights', 'elementLimit'],
         services: [
           'dataManager',
           'utils',
+          'roleManager',
           'document',
           'wordpress-post-data',
           'dataProcessor',
@@ -64,13 +65,14 @@ export default Object.assign({}, config, {
           'elementAccessPoint',
           'hubAddons',
           'renderProcessor',
-          'api'
-        ]
+          'api',
+        ],
       },
       hub: {
         services: [
           'dataManager',
           'utils',
+          'roleManager',
           'document',
           'wordpress-post-data',
           'dataProcessor',
@@ -86,23 +88,24 @@ export default Object.assign({}, config, {
           'elementAccessPoint',
           'hubAddons',
           'renderProcessor',
-          'api'
-        ]
-      }
+          'api',
+        ],
+      },
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].bundle.css'
+      filename: '[name].bundle.css',
     }),
-    new VirtualModulePlugin({
-      moduleName: 'node_modules/jquery/dist/jquery.js',
-      contents: 'module.exports = window.jQuery'
-    }),
+    virtualModules,
     new VcWebpackCustomAliasPlugin(false, false),
-    new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    })
-  ]
+        NODE_ENV: JSON.stringify('production'),
+        DEBUG: JSON.stringify('false'),
+        platform: JSON.stringify('unix'),
+        NODE_DEBUG: JSON.stringify('false'),
+      },
+      'process.platform': JSON.stringify('unix'),
+      'fs.promises.readFile': JSON.stringify(false),
+    }),
+  ],
 })

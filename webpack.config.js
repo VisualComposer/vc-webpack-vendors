@@ -11,11 +11,9 @@ var _path = _interopRequireDefault(require("path"));
 
 var _fs = _interopRequireDefault(require("fs"));
 
-var _webpack = _interopRequireDefault(require("webpack"));
-
 var _index = _interopRequireDefault(require("./index"));
 
-var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
+var _webpackVendorReplace = _interopRequireDefault(require("./lib/webpack.vendorReplace.plugin"));
 
 var _miniCssExtractPlugin = _interopRequireDefault(require("mini-css-extract-plugin"));
 
@@ -33,20 +31,19 @@ var _default = Object.assign({}, {
   output: {
     path: _path.default.resolve(process.cwd(), 'public/dist/'),
     // Assets dist path
-    publicPath: '.',
+    publicPath: 'auto',
     // Used to generate URL's
     filename: '[name].bundle.js',
     // Main bundle file
     chunkFilename: '[name].bundle.js',
-    jsonpFunction: 'vcvWebpackJsonp4x'
-  },
-  node: {
-    fs: 'empty'
+    chunkLoadingGlobal: 'vcvWebpackJsonp4x',
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   optimization: {
     minimize: false,
     runtimeChunk: 'single',
-    namedModules: true,
+    chunkIds: 'named',
+    moduleIds: 'named',
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -67,13 +64,9 @@ var _default = Object.assign({}, {
   },
   plugins: [new _miniCssExtractPlugin.default({
     filename: '[name].bundle.css'
-  }), new _webpack.default.NamedModulesPlugin(), new _webpackVendorReplace.default(tag + '/index.js', type)],
+  }), new _webpackVendorReplace.default(tag + '/index.js', type)],
   module: {
     rules: [{
-      parser: {
-        amd: false
-      }
-    }, {
       test: /\.mjs$/,
       include: /node_modules/,
       type: 'javascript/auto'
@@ -91,32 +84,33 @@ var _default = Object.assign({}, {
       }, 'css-loader', {
         loader: 'postcss-loader',
         options: {
-          plugins: function plugins() {
-            return [require('autoprefixer')()];
+          postcssOptions: {
+            plugins: function plugins() {
+              return [require('autoprefixer')()];
+            }
           }
         }
       }, 'less-loader']
     }, {
-      test: /\.svg/,
-      use: {
-        loader: 'svg-url-loader',
-        options: {}
-      }
-    }, {
-      test: /\.(png|jpe?g|gif)$/,
-      use: 'url-loader?limit=10000&name=/images/[name].[ext]?[hash]'
-    }, // inline base64 URLs for <=8k images, direct URLs for the rest.
-    {
-      test: /\.woff(2)?(\?.+)?$/,
-      use: 'url-loader?limit=10000&mimetype=application/font-woff&name=/fonts/[name].[ext]?[hash]'
-    }, {
-      test: /\.(ttf|eot)(\?.+)?$/,
-      use: 'file-loader?name=/fonts/[name].[ext]?[hash]'
+      test: /\.(png|jpe?g|gif|svg|ttf|woff)$/,
+      type: 'asset/resource'
     }, {
       test: /\.raw(\?v=\d+\.\d+\.\d+)?$/,
-      use: 'raw-loader' // { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery&$=jquery' }
-
+      use: 'raw-loader'
     }]
+  },
+  resolve: {
+    fallback: {
+      crypto: require.resolve('crypto-browserify'),
+      path: require.resolve('path-browserify'),
+      os: require.resolve('os-browserify/browser'),
+      util: require.resolve('util/'),
+      buffer: require.resolve('buffer/'),
+      fs: require.resolve('./lib/slim-fs.js'),
+      http: false,
+      https: false,
+      stream: false
+    }
   }
 });
 

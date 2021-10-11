@@ -1,5 +1,5 @@
 .test-svg {
   .bg {
-    background-image: url('bold.svg');
+    background-image: url('./bold.svg');
   }
 }

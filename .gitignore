@@ -3,4 +3,5 @@ yarn.lock
 public/*
 test/public/*
 .idea/*
-builder/
+builder
+test/test-vendor-replace/public/dist
