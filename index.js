@@ -12,7 +12,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var aliasesMap = require('./lib/webpack.oldlibs.aliasesMap');
+var aliasesMap = require('./webpack.oldlibs.aliasesMap');
 
 module.exports = function webpackVendors() {
     return _toConsumableArray(new Set([

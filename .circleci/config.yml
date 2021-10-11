@@ -24,6 +24,9 @@ jobs:
           command: yarn test-aliases
           name: Test Vendor Aliases
       - run:
+          command: yarn test-builder-slim
+          name: Test Builder Building Slim
+      - run:
           command: yarn test-builder
           name: Test Builder Building
       - run:
