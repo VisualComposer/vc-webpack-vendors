@@ -3,7 +3,7 @@ var vendors = require('../index')
 vendors().forEach((item) => {
   if (item.indexOf('runtime/helper') > -1) {
     item = item.replace('.js', '') // fix for 7.15.4
-    var library = require(item)
+    var library = import(item)
     console.log({ name: item, library: library })
   } else {
     var library = require(item)
