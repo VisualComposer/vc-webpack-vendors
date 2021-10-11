@@ -2,7 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import VirtualModulesPlugin from 'webpack-virtual-modules'
-import VcWebpackCustomAliasPlugin from '../webpack.plugin.customAlias'
+import VcWebpackCustomAliasPlugin from '../lib/webpack.plugin.customAlias'
 import webpackVendors from '../index'
 import Collector from '../builder/tools/webpack-collector-5x'
 
@@ -112,6 +112,7 @@ export default {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
         DEBUG: JSON.stringify('true'),
+        platform: JSON.stringify('unix'),
         NODE_DEBUG: JSON.stringify('true'),
       },
       'process.platform': JSON.stringify('unix'),

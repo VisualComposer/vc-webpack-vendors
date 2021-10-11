@@ -13,7 +13,7 @@ var _fs = _interopRequireDefault(require("fs"));
 
 var _index = _interopRequireDefault(require("./index"));
 
-var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
+var _webpackVendorReplace = _interopRequireDefault(require("./lib/webpack.vendorReplace.plugin"));
 
 var _miniCssExtractPlugin = _interopRequireDefault(require("mini-css-extract-plugin"));
 
@@ -37,7 +37,7 @@ var _default = Object.assign({}, {
     // Main bundle file
     chunkFilename: '[name].bundle.js',
     chunkLoadingGlobal: 'vcvWebpackJsonp4x',
-    assetModuleFilename: 'images/[hash][ext][query]'
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   optimization: {
     minimize: false,
@@ -106,7 +106,7 @@ var _default = Object.assign({}, {
       os: require.resolve('os-browserify/browser'),
       util: require.resolve('util/'),
       buffer: require.resolve('buffer/'),
-      fs: false,
+      fs: require.resolve('./lib/slim-fs.js'),
       http: false,
       https: false,
       stream: false
