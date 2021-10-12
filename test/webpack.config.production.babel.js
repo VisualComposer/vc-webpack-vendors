@@ -105,6 +105,7 @@ export default Object.assign({}, config, {
         NODE_DEBUG: JSON.stringify('false'),
       },
       'process.platform': JSON.stringify('unix'),
+      'process.browser': JSON.stringify('chrome'),
       'fs.promises.readFile': JSON.stringify(false),
     }),
   ],
