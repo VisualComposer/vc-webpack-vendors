@@ -11,8 +11,6 @@ var _path = _interopRequireDefault(require("path"));
 
 var _fs = _interopRequireDefault(require("fs"));
 
-var _index = _interopRequireDefault(require("./index"));
-
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
 var _miniCssExtractPlugin = _interopRequireDefault(require("mini-css-extract-plugin"));
@@ -25,8 +23,7 @@ var _default = Object.assign({}, {
   devtool: 'eval',
   mode: 'development',
   entry: {
-    element: process.cwd() + '/' + tag + '/index.js',
-    vendor: (0, _index.default)()
+    element: process.cwd() + '/' + tag + '/index.js'
   },
   output: {
     path: _path.default.resolve(process.cwd(), 'public/dist/'),
@@ -50,7 +47,7 @@ var _default = Object.assign({}, {
         vendor: {
           chunks: 'initial',
           name: 'vendor',
-          test: 'vendor',
+          test: /[\\/]node_modules[\\/]/,
           enforce: true
         },
         element: {
