@@ -116,6 +116,7 @@ export default {
         NODE_DEBUG: JSON.stringify('true'),
       },
       'process.platform': JSON.stringify('unix'),
+      'process.browser': JSON.stringify('chrome'),
       'fs.promises.readFile': JSON.stringify(false),
     }),
     virtualModules,
