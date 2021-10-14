@@ -59,7 +59,7 @@ var VcWebpackCustomAliasPlugin =
                   )
                 source = source.replace(
                   'var runtime = data[2];',
-                  "var runtime = data[2];if(chunkIds[0] === 'element') {chunkIds[0] = runtime[0][0];}"
+                  "var runtime = data[2];if(chunkIds[0] === 'element' || chunkIds[0] === 0) {chunkIds[0] = runtime[0][0];}"
                 )
                 source = source.replace(
                   'if(runtime) var result = runtime(__webpack_require__);',
