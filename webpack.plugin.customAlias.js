@@ -63,7 +63,7 @@ var VcWebpackCustomAliasPlugin =
                 )
                 source = source.replace(
                   'if(runtime) var result = runtime(__webpack_require__);',
-                  "if(typeof runtime === 'function') { var result = runtime(__webpack_require__); } else {var cb = function(__webpack_require__) { var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }; var __webpack_exports__ = (__webpack_exec__(runtime[0][0])); }; var result = cb(__webpack_require__);}"
+                  "if(typeof runtime === 'function') { var result = runtime(__webpack_require__); } else if(typeof runtime !== 'undefined') {var cb = function(__webpack_require__) { var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }; var __webpack_exports__ = (__webpack_exec__(runtime[0][0])); }; var result = cb(__webpack_require__);}"
                 )
 
                 // fix default export in prod
