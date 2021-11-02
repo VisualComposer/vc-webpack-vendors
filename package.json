@@ -1,7 +1,7 @@
 {
   "name": "vc-webpack-vendors",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "main": "index.js",
   "devDependencies": {
     "color-blend": "https://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322",
@@ -68,11 +68,11 @@
     "postcss-custom-media": "8.0.0",
     "postcss-custom-properties": "12.0.0",
     "postcss-each": "1.1.0",
-    "postcss-functions": "git://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1",
+    "postcss-functions": "https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1",
     "postcss-loader": "6.1.1",
     "postcss-math": "0.0.10",
     "postcss-nested": "5.0.6",
-    "postcss-prefix-url": "git://github.com/wpbakery/postcss-prefix-url.git#60f177340ab35fce12cf4172752bd484ece3c7df",
+    "postcss-prefix-url": "https://github.com/wpbakery/postcss-prefix-url.git#60f177340ab35fce12cf4172752bd484ece3c7df",
     "prop-types": "15.7.2",
     "raw-loader": "1.0.0",
     "react": "17.0.2",
