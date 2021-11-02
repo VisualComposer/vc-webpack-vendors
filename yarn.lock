@@ -2533,9 +2533,9 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-"color-blend@git://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322":
+"color-blend@https://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322":
   version "1.0.0"
-  resolved "git://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322"
+  resolved "https://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322"
   dependencies:
     consistent "^1.1.0"
     postcss "^6.0.21"
