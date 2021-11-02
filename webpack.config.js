@@ -87,7 +87,14 @@ var _default = Object.assign({}, {
             }
           }
         }
-      }, 'less-loader']
+      }, {
+        loader: 'less-loader',
+        options: {
+          lessOptions: {
+            math: 'always'
+          }
+        }
+      }]
     }, {
       test: /\.(png|jpe?g|gif|svg|ttf|woff)$/,
       type: 'asset/resource'

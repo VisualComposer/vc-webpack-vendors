@@ -36,8 +36,8 @@ export default Object.assign({}, config, {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
-          safari10: true
-        }
+          safari10: true,
+        },
       }),
       new CssMinimizerPlugin(),
     ],
