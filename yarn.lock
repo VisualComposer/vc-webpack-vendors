@@ -2533,13 +2533,13 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-"color-blend@https://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322":
+"color-blend@https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39":
   version "1.0.0"
-  resolved "https://github.com/wpbakery/color-blend.git#5dd059a6dbdc6754f53f4eca09800953534d8322"
+  resolved "https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39"
   dependencies:
     consistent "^1.1.0"
     postcss "^6.0.21"
-    postcss-functions "git://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
+    postcss-functions "https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
 
 color-convert@^0.5.2:
   version "0.5.3"
@@ -6598,15 +6598,6 @@ postcss-each@1.1.0:
   dependencies:
     postcss-simple-vars "^6.0.0"
 
-"postcss-functions@git://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1":
-  version "3.0.0"
-  resolved "git://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
-  dependencies:
-    glob "^7.1.2"
-    object-assign "^4.1.1"
-    postcss "^6.0.9"
-    postcss-value-parser "^3.3.0"
-
 "postcss-functions@https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1":
   version "3.0.0"
   resolved "https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
@@ -6805,13 +6796,13 @@ postcss-ordered-values@^5.0.2:
     cssnano-utils "^2.0.1"
     postcss-value-parser "^4.1.0"
 
-"postcss-prefix-url@https://github.com/wpbakery/postcss-prefix-url.git#60f177340ab35fce12cf4172752bd484ece3c7df":
+"postcss-prefix-url@https://github.com/wpbakery/postcss-prefix-url.git#6c97a12d67e0cd6ecc49801bebca81cd56db0011":
   version "1.0.0"
-  resolved "https://github.com/wpbakery/postcss-prefix-url.git#60f177340ab35fce12cf4172752bd484ece3c7df"
+  resolved "https://github.com/wpbakery/postcss-prefix-url.git#6c97a12d67e0cd6ecc49801bebca81cd56db0011"
   dependencies:
     consistent "^1.1.0"
     postcss "^6.0.21"
-    postcss-functions "git://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
+    postcss-functions "https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
 
 postcss-reduce-initial@^5.0.1:
   version "5.0.1"
