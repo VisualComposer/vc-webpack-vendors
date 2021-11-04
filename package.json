@@ -1,6 +1,6 @@
 {
   "name": "vc-webpack-vendors",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
   "keywords": [
     "webpack",
@@ -34,8 +34,8 @@
   ],
   "resolutions": {
     "color-name": "1.1.4",
-    "core-js": "3.19.0",
-    "css-loader": "6.5.0",
+    "core-js": "3.19.1",
+    "css-loader": "6.5.1",
     "eslint": "7.32.0",
     "less": "4.1.2",
     "postcss": "8.3.11",
@@ -60,10 +60,10 @@
     "color-blend": "https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39",
     "color-name": "1.1.4",
     "combokeys": "3.0.1",
-    "core-js": "3.19.0",
+    "core-js": "3.19.1",
     "create-react-class": "15.7.0",
     "crypto-browserify": "3.12.0",
-    "css-loader": "6.5.0",
+    "css-loader": "6.5.1",
     "css-minimizer-webpack-plugin": "3.1.1",
     "cssnano": "5.0.9",
     "cypress": "5.0.0",
