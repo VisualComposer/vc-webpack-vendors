@@ -8,6 +8,7 @@ jobs:
     steps:
       - checkout
       - node/install:
+          node-version: 16.12.0
           install-yarn: true
       - node/install-packages:
           pkg-manager: yarn
