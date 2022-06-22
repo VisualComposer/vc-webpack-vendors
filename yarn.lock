@@ -8821,7 +8821,7 @@ vc-cake@0.9.0:
     lodash "4.17.13"
     murmurhash "0.0.2"
 
-vc-helpers@^0.0.2:
+vc-helpers@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/vc-helpers/-/vc-helpers-0.0.2.tgz#584edf46477106f2fb7b13f85cd96a6af3a7d0a7"
   integrity sha512-la2KjObUCGjEmIlBvjFOgvGVm041l9/u0Y17e8Xlxw9BvblA4L45Na4tpsYjAAxQvjm+S6YaLiBwEhM8E73HxA==
