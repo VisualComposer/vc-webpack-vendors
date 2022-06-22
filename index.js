@@ -24,6 +24,7 @@ module.exports = function webpackVendors() {
         'striptags',
         'lodash',
         'vc-cake',
+        'vc-helpers',
         'pako',
         'base-64',
         '@babel/runtime/helpers/objectSpread',
