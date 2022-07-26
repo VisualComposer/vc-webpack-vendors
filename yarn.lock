@@ -2728,9 +2728,9 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-"color-blend@https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39":
+"color-blend@git+https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39":
   version "1.0.0"
-  resolved "https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39"
+  resolved "git+https://github.com/wpbakery/color-blend.git#bc6cd57f764cb4478e5f652045f325282dbf3b39"
   dependencies:
     consistent "^1.1.0"
     postcss "^6.0.21"
@@ -6861,6 +6861,16 @@ postcss-each@1.1.0:
   dependencies:
     postcss-simple-vars "^6.0.0"
 
+"postcss-functions@git+https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1":
+  version "3.0.0"
+  uid "8aa5a44c1c07c522f704ceaa6794b74682e444f1"
+  resolved "git+https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
+  dependencies:
+    glob "^7.1.2"
+    object-assign "^4.1.1"
+    postcss "^6.0.9"
+    postcss-value-parser "^3.3.0"
+
 "postcss-functions@https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1":
   version "3.0.0"
   resolved "https://github.com/wpbakery/postcss-functions.git#8aa5a44c1c07c522f704ceaa6794b74682e444f1"
@@ -7068,9 +7078,9 @@ postcss-ordered-values@^5.0.2:
     cssnano-utils "^2.0.1"
     postcss-value-parser "^4.1.0"
 
-"postcss-prefix-url@https://github.com/wpbakery/postcss-prefix-url.git#6c97a12d67e0cd6ecc49801bebca81cd56db0011":
+"postcss-prefix-url@git+https://github.com/wpbakery/postcss-prefix-url.git#6c97a12d67e0cd6ecc49801bebca81cd56db0011":
   version "1.0.0"
-  resolved "https://github.com/wpbakery/postcss-prefix-url.git#6c97a12d67e0cd6ecc49801bebca81cd56db0011"
+  resolved "git+https://github.com/wpbakery/postcss-prefix-url.git#6c97a12d67e0cd6ecc49801bebca81cd56db0011"
   dependencies:
     consistent "^1.1.0"
     postcss "^6.0.21"
