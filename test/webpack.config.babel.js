@@ -58,6 +58,7 @@ export default {
           'wordpressWorkspace',
           'insights',
           'elementLimit',
+          'popups'
         ],
         services: [
           'dataManager',
@@ -121,6 +122,9 @@ export default {
     }),
     virtualModules,
     new VcWebpackCustomAliasPlugin(false, true),
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer']
+    })
   ],
   amd: false,
   module: {
@@ -136,6 +140,13 @@ export default {
           loader: 'babel-loader',
         },
         exclude: /node_modules/,
+      },
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: 'ts-loader'
+        },
+        include: [path.resolve(__dirname, '../builder/public/')]
       },
       {
         test: /\.css|\.less$/,
@@ -197,6 +208,7 @@ export default {
     ],
   },
   resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json', '.wasm'],
     alias: { public: path.resolve(__dirname, '../builder/public/') },
     fallback: {
       amd: false,

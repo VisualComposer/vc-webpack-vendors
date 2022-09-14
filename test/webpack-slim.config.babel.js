@@ -122,6 +122,13 @@ export default Object.assign(
           exclude: /node_modules/,
         },
         {
+          test: /\.tsx?$/,
+          use: {
+            loader: 'ts-loader'
+          },
+          include: [path.resolve(__dirname, '../builder/public/')]
+        },
+        {
           test: /\.css|\.less$/,
           exclude: [/styles\.css/, /editor\.css/],
           use: [
@@ -175,6 +182,7 @@ export default Object.assign(
       ],
     },
     resolve: {
+      extensions: ['.ts', '.tsx', '.js', '.json', '.wasm'],
       alias: { public: path.resolve(__dirname, '../builder/public/') },
       fallback: {
         crypto: require.resolve('crypto-browserify'),
