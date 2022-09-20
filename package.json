@@ -131,7 +131,7 @@
     "url-loader": "4.1.1",
     "util": "0.12.4",
     "vc-cake": "1.1.1",
-    "vc-helpers": "0.0.3",
+    "vc-helpers": "0.0.4",
     "virtual-module-webpack-plugin": "0.4.1",
     "webfontloader": "1.6.28",
     "webpack": "5.74.0",
