@@ -8594,10 +8594,10 @@ vc-cake@1.1.1:
     lodash "4.17.21"
     murmurhash "2.0.0"
 
-vc-helpers@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/vc-helpers/-/vc-helpers-0.0.3.tgz#6dbfb60696d36d6dcac509a1d143eafd0896c3cf"
-  integrity sha512-7wAg1JTRwsHcFudBeXzs/GBkSchgpQ0itr01TB0uK3mZ6uVYTo4esCYRHtPqFMx3iNjcvJyOmSDlbWPPEIf0HQ==
+vc-helpers@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vc-helpers/-/vc-helpers-0.0.4.tgz#4d7b321c449f11bee8833214a7e5ea04230a7286"
+  integrity sha512-SIN8tVo6jTk6AYQ9UwMz7y51oIeDGxZ1LLbzjfwK0S6RTTu+hzx6dDZmaNgGd/sIh3QyM8DpF4C5GLoqxvJKQw==
 
 verror@1.10.0:
   version "1.10.0"
