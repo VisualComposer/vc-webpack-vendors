@@ -1,6 +1,6 @@
 {
   "name": "vc-webpack-vendors",
-  "version": "3.2.8",
+  "version": "3.2.9",
   "description": "This package contains Visual Composer vendors for backward compatibility and element.bundle.js vendors extracting.",
   "keywords": [
     "webpack",
@@ -128,6 +128,7 @@
     "terser-webpack-plugin": "5.2.4",
     "ts-loader": "9.3.1",
     "typescript": "4.8.3",
+    "url": "0.11.0",
     "url-loader": "4.1.1",
     "util": "0.12.4",
     "vc-cake": "1.1.1",

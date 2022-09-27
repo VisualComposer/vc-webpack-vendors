@@ -185,7 +185,7 @@ export default Object.assign(
       extensions: ['.ts', '.tsx', '.js', '.json', '.wasm'],
       alias: { public: path.resolve(__dirname, '../builder/public/') },
       fallback: {
-        url: false,
+        url: require.resolve('url'),
         crypto: require.resolve('crypto-browserify'),
         path: require.resolve('path-browserify'),
         os: require.resolve('os-browserify/browser'),
