@@ -41,7 +41,11 @@ module.exports = function webpackVendors() {
             key = key.replace('/index.js', '');
             key = key.replace('.js', ''); // fix for 7.15.4
         }
-
-        return key;
+        if (key.indexOf('react/index.js') !== -1) {
+          key = ''
+        }
+      return key;
+    }).filter((key) => {
+      return key
     })));
 };
