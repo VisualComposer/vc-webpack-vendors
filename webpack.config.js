@@ -13,11 +13,14 @@ var _fs = _interopRequireDefault(require("fs"));
 
 var _webpackVendorReplace = _interopRequireDefault(require("./webpack.vendorReplace.plugin"));
 
+var _index = _interopRequireDefault(require("./index"));
+
 var _miniCssExtractPlugin = _interopRequireDefault(require("mini-css-extract-plugin"));
 
 var manifest = JSON.parse(_fs.default.readFileSync(_path.default.join(process.cwd(), 'manifest.json')));
 var type = Object.keys(manifest)[0];
 var tag = Object.keys(manifest[type])[0];
+var vendors = (0, _index.default)();
 
 var _default = Object.assign({}, {
   devtool: 'eval',
@@ -47,7 +50,20 @@ var _default = Object.assign({}, {
         vendor: {
           chunks: 'initial',
           name: 'vendor',
-          test: /[\\/]node_modules[\\/]/,
+          // test: /[\\/]node_modules[\\/]/,
+          test: function test(module) {
+            var found = false;
+
+            if (module.resource && module.resource.indexOf('node_modules') !== -1) {
+              vendors.forEach(function (vendor) {
+                if (module.resource && module.resource.indexOf(vendor) !== -1) {
+                  found = true;
+                }
+              });
+            }
+
+            return found;
+          },
           enforce: true
         },
         element: {

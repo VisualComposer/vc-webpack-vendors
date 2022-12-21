@@ -32,7 +32,9 @@ module.exports = function webpackVendors() {
         'postcss',
         // 'clean-css',
         'immutable',
-        'bn.js'
+        'bn.js',
+        // some packages requires react/jsx-runtime
+        'react/jsx-runtime',
     ].concat(Object.values(aliasesMap)).map(function (i) {
         var key = i.replace('./node_modules/', '');
 
